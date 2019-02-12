@@ -8,6 +8,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "stl-stf",
       home:new Homepage(),
+      theme: new ThemeData(
+        backgroundColor: Colors.deepOrangeAccent,
+        primarySwatch: Colors.green,
+        brightness: Brightness.dark
+      ),
     );
   }
 }
@@ -36,10 +41,19 @@ class _HomepageState extends State<Homepage> {
       padding: const EdgeInsets.all(8.0),
         child: new Center(
               child:new Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                  children: <Widget>[
-                   new Text(mytext),
+                   new Text(mytext , style: new TextStyle(
+                     fontSize:30.0,
+                     color: Colors.green,
+
+                   ),),
                    new RaisedButton(
-                      child: new Text("click"),
+                      child: new Text("click" ,style: new TextStyle(
+                        fontSize: 25.0,
+                        color: Colors.blue,
+                      ),),
+                      color: Colors.black,
                       onPressed:_changetext ),
                                    ],
                                ),
@@ -52,7 +66,10 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title:new Center(child: new Text("Gohil Masion"),)
+        title:new Center(child: new Text("Gohil Masion" , style: new TextStyle(
+          color: Colors.green,
+        ),
+        ),)
       ),
         body: _bodywiget()
     );
